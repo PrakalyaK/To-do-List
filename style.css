@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poopins",sans-serif;
+    
+}
+body{
+    background:linear-gradient(135deg,#e9d5ff,#c4b5fd,#93c5fd);
+    padding:20px;
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    overflow-y:auto;
+}
+.todocard{
+    background-color: #f3efff;
+    width:100%;
+    max-width:500px;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+.headings{
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    margin-bottom:25px;
+   
+}
+.headings h2{
+font-size: 3rem;
+color:#7c3aed;
+}
+#sma{
+    color:#666;
+    margin-top:5px;
+    margin-left:5px;
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+.section1{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+.section1 input{
+flex:1;
+border:none;
+outline:none;
+padding: 12px;
+border-radius:15px;
+font-size: 1rem;
+}
+.section1 span{
+    color:red;
+    font-size:12px;
+}
+.section1 button{
+    border:none;
+    outline:none;
+    background-color: #7c3aed;
+    color:white;
+    padding:15px;
+    cursor:pointer;
+    font-weight: 600;
+    border-radius:5px 15px 15px 5px;
+    transition:all 0.3s ease;
+}
+.section1 button:hover{
+    transform:scaleX(1.1);
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+.main{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-bottom:10px;
+}
+.main div{
+    display:flex;
+    gap:1rem;
+    border:1px solid #7c3aed;
+    box-shadow:5px 5px 12px rgba(0,0,0,0.08);
+    padding: 10px;
+    border-radius:15px;
+}
+.main span{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.main div button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color:#7c3aed;
+}
+.delete-btn{
+    margin-left:auto;
+    
+}
