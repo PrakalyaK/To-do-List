@@ -101,13 +101,26 @@ font-size: 1rem;
     margin-left:auto;
     
 }
-/*.main input[type="checkbox"]{
+.main input[type="checkbox"]{
     appearance: none;
-    height: 15px;
-    width:15px;
+    height: 18px;
+    width:18px;
     border:1px solid black;
     border-radius: 50%;
-}*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+}
+.main input[type="checkbox"]:checked{
+    background-color: #7c3aed;
+}
+.main input[type="checkbox"]:checked::before{
+   content:'\2713';
+   font-size:0.8rem;
+   font-weight:300;
+    color:white;
+}
 .progress-bar{
    height:5px;
    background-color:#c4c4c4;
