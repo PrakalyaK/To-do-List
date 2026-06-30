@@ -47,6 +47,7 @@ color:#7c3aed;
 }
 .section1 input{
 flex:1;
+min-width:0;
 border:none;
 outline:none;
 padding: 12px;
@@ -58,6 +59,7 @@ font-size: 1rem;
     font-size:12px;
 }
 .section1 button{
+    flex-shrink: 0;
     border:none;
     outline:none;
     background-color: #7c3aed;
@@ -148,5 +150,8 @@ font-size: 1rem;
     }
     .section1{
         gap:10px;
+    }
+    .section1 input{
+
     }
 }
