@@ -2,13 +2,31 @@ let inputbox=document.getElementsByClassName("section")[0];
 let input=document.getElementById("input");
 let addbtn=document.getElementById("btn");
 let taskbox=document.getElementsByClassName("main")[0];
-
+let done=document.getElementsByClassName("done")[0];
+let progfill=document.getElementsByClassName("progress-fill")[0];
 //creates tasks named array by getting info from json file
 let tasks=JSON.parse(localStorage.getItem("tasks"))|| [];
 
 //save tasks in json
 function savetasks(){
     localStorage.setItem("tasks",JSON.stringify(tasks));
+}
+function progress(){
+    done.innerHTML="";
+    let count=0;
+    tasks.forEach((task)=>{
+     if(task.completed){
+        count++;
+     }
+    });
+    let span=document.createElement("span");
+    span.innerHTML=`${count} of ${tasks.length} done`;
+    done.appendChild(span);
+    if(tasks.length>0){
+    progfill.style.width=((count/tasks.length)*100)+"%";
+    }
+    progfill.style.backgroundColor="#7c3aed";
+    console.log(progfill);
 }
 
 function rendertasks(){
@@ -18,6 +36,7 @@ function rendertasks(){
     const checkbox=document.createElement("input");
     checkbox.type="checkbox";
     checkbox.checked=task.completed;
+    checkbox.classList.add("checkbox");
     const span=document.createElement("span");
     span.innerHTML=task.text;
     if(task.completed){
@@ -41,6 +60,7 @@ function rendertasks(){
     div.append(span);
     div.append(dele);
   })
+  progress();
 }
 //When I click add button 
 //first push into tasks
@@ -60,25 +80,4 @@ addbtn.addEventListener("click",()=>{
    input.value="";
 })
 rendertasks();
-
-
-
-
-
-
-
-
-
-
-/*let tasks=document.createElement("div");
-let checkbox=document.createElement("input");
-let deletebtn=document.createElement("button");
-deletebtn.innerHTML='<i class="fa-solid fa-trash"></i>';
-checkbox.type="checkbox";
-tasks.appendChild(checkbox);
-let p=document.createElement("span");
-p.innerHTML=" Hello";
-tasks.appendChild(p);
-tasks.appendChild(deletebtn);
-let taskbox=document.getElementsByClassName("main")[0];
-taskbox.appendChild(tasks);*/
+progress();

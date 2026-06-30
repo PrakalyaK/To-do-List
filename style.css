@@ -101,3 +101,21 @@ font-size: 1rem;
     margin-left:auto;
     
 }
+/*.main input[type="checkbox"]{
+    appearance: none;
+    height: 15px;
+    width:15px;
+    border:1px solid black;
+    border-radius: 50%;
+}*/
+.progress-bar{
+   height:5px;
+   background-color:#c4c4c4;
+   width:100%;
+   border-radius: 12px;
+}
+.progress-fill{
+    width:0%;
+    height:100%;
+    border-radius: 12px;
+}
